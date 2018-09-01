@@ -1,8 +1,10 @@
 Issue:
 In Spring Boot Web Application Utility/Helper classes need to be annotated as Compenent to autowire to the required classes to acquired the dependency.
 If we define the scope as "prototype" , autowiring of these helper classes in controller classes leads to the issue as same object being shared among different sessions.
+
 Why prototype failed to create new instances ?
 As controller classes are singleton classes, autowiring of prototype fields inside the controller classes doesn't have any effect. As protoype object should have been created at the first call itself and it won't be needed for next calls as singleton controller class already acquired the object at the first call.
+
 Solution:
 Here comes other web aware scopes like request and session.
 I tried with defining the helper classes with request and session scopes , but while starting the application itself , ended up with exception.
