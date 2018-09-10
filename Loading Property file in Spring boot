@@ -1,0 +1,19 @@
+
+Below stackoverflow Question helps in problem faced for loading property file.
+
+https://stackoverflow.com/questions/52212148/loading-of-property-file-outside-of-war-file-in-spring-boot
+
+Issue :
+
+Initially , i worked in Spring boot with embdedded tomcat application . I didn't use any config class with configuration or Propertysource annotation to load the properties file.
+
+But for deployment in production , i need to convert my jar application to deployable war so i followed  below link 
+
+https://www.mkyong.com/spring-boot/spring-boot-deploy-war-file-to-tomcat/
+
+Don't forget to add JSTL and JSP , jdbc libraries as runtime , it took more time figure it out . those libraries are needed at runtime to smooth functioning of application.
+
+Once everything done, i am keep on getting error like datasource not getting initialsed properly and application failed to start. I tried various solutions , confused and ended in error. So i reveretd back to jar application , but this time jar also not working .I reverted back changes in pom file , Main class file , nothing helped. 
+
+Solution:
+I finally added config class with configuration & Propertysource annotation to load the properties file. It worked.
