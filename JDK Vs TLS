@@ -15,6 +15,9 @@ javax.net.ssl.SSLHandshakeException: Remote host closed connection during handsh
         at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1091)
         
 Resolution:
+
+https://stackoverflow.com/questions/39157422/how-to-enable-tls-1-2-in-java-7
+
 As For  standalone  application , we can force the JVM to use TLS1.2.
 we can force JDK1.7 to use TLS1.2
  java -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2 -cp "depedencies;." MainProgram
