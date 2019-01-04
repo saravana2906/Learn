@@ -1,0 +1,8 @@
+Issue : 
+JSP with jar package with embedded tomcat is not properly supported in Spring boot . Sometimes you try to convert to war , controller function will execute , but return view will not resolve. Tried many things updating JRE in eclipse with installed JDK .No use.
+Verified prefix and suffix , everything good but couldn't find any problem.
+Diagnosis:
+used --debug flag with run configuration in eclipse couldn't pinpoint the issue, then used --trace flag and able to pinpoint that prefix and suffix configuration given in application properties file is not taking in.
+It would be problem due to properties files itself not taking also ,so  we can configure properties file also.
+To Fix this issue:
+configured the view resolver using WebMvcConfigurationSupport class and mentioned the prefix and suffix using java file and it worked fine.
